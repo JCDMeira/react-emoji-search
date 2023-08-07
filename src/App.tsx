@@ -7,7 +7,7 @@ function App() {
     <div>
       <Header />
       <Searchbar />
-      <Emojis />
+      <Emojis emojiData={[]} />
     </div>
   );
 }
