@@ -1,5 +1,15 @@
+import { Emojis } from './Dashboard/Emojis';
+import { Header } from './Dashboard/Header';
+import { Searchbar } from './Dashboard/Searchbar';
+
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div>
+      <Header />
+      <Searchbar />
+      <Emojis />
+    </div>
+  );
 }
 
 export default App;
