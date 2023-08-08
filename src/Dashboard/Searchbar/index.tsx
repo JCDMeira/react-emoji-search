@@ -1,18 +1,18 @@
-import { SyntheticEvent } from 'react';
 import './styles.css';
 
-export const Searchbar = () => {
-  const handleText = (event: SyntheticEvent) => {
-    console.log(event);
-  };
+type SearchbarProps = {
+  // eslint-disable-next-line no-unused-vars
+  handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
+export const Searchbar: React.FC<SearchbarProps> = ({ handleSearch }) => {
   return (
     <div className="search-input">
       <div>
         <input
           className="input-text"
           placeholder="Search Emoji"
-          onChange={handleText}
+          onChange={handleSearch}
         />
       </div>
     </div>
