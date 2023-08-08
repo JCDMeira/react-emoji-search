@@ -5,9 +5,13 @@ import { Header } from './Dashboard/Header';
 import { Searchbar } from './Dashboard/Searchbar';
 
 function App() {
-  const [filteredEmojis, setfilteredEmojis] = useState(onFilter(''));
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setfilteredEmojis(onFilter(e.target.value, 15));
+  const [filteredEmojis, setfilteredEmojis] = useState(
+    onFilter({ searchText: '' }),
+  );
+  const handleSearch = ({
+    target: { value },
+  }: React.ChangeEvent<HTMLInputElement>) =>
+    setfilteredEmojis(onFilter({ searchText: value, maxResults: 15 }));
 
   return (
     <div>

@@ -1,6 +1,11 @@
 import emojiList from './emojiList.json';
 
-export function onFilter(searchText: string, maxResults = 1820) {
+type onFilterDTO = {
+  searchText: string;
+  maxResults?: number;
+};
+
+export const onFilter = ({ searchText, maxResults = 1820 }: onFilterDTO) => {
   return emojiList
     .filter((emoji) => {
       return !!(
@@ -11,4 +16,4 @@ export function onFilter(searchText: string, maxResults = 1820) {
       );
     })
     .slice(0, maxResults);
-}
+};
